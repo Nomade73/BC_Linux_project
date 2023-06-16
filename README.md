@@ -47,7 +47,7 @@ then we configure the dhcp.conf:
 sudo nano /etc/dchp/dhcpd.conf
  copy paste this :
 
- 
+ ```
 # a simple /etc/dhcp/dhcpd.conf
 default-lease-time 600;
 max-lease-time 7200;
@@ -59,5 +59,6 @@ subnet 192.168.56.0 netmask 255.255.255.0 {
  option domain-name-servers 192.168.56.1, 192.168.56.2;
  option domain-name "mydomain.example";
 }
+```
  
      
