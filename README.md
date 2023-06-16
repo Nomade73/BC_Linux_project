@@ -32,4 +32,32 @@ Set up the following Linux infrastructure:
         2. The /home folder is located on a separate partition, same disk 
     - **Optional**
         1. Propose and implement a solution to remotely help a user
+
+## Setting up a DHCP server
+
+sudo apt install isc-dhcp-server
+
+sudo nano /etc/defaulf/isc-dhcp-server
+replace the last 2 lines
+INTERFACESv4="eth0"
+#INTERFACESv6=""
+
+then we configure the dhcp.conf:
+
+sudo nano /etc/dchp/dhcpd.conf
+ copy paste this :
+
+ 
+# a simple /etc/dhcp/dhcpd.conf
+default-lease-time 600;
+max-lease-time 7200;
+authoritative;
+ 
+subnet 192.168.56.0 netmask 255.255.255.0 {
+ range 192.168.56.101 192.168.56.130;
+ option routers 192.168.56.254;
+ option domain-name-servers 192.168.56.1, 192.168.56.2;
+ option domain-name "mydomain.example";
+}
+ 
      
