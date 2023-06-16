@@ -60,5 +60,11 @@ subnet 192.168.56.0 netmask 255.255.255.0 {
  option domain-name "mydomain.example";
 }
 ```
- 
+
+To verify thats it's working properly on your workstation, you can use :
+
+```
+sudo dhclient -v
+
+```
      
